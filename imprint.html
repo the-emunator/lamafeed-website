@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imprint / Impressum — LamaFeed</title>
+<meta name="description" content="Legal notice / Impressum for LamaFeed App and Website.">
+
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* === Copy the exact same CSS from privacy.html === */
+:root[data-theme="dark"] {
+  --bg: #0a0a0a; --bg-soft: #131313; --bg-card: #1a1a1a; --bg-elevated: #1f1f1f;
+  --ink: #f5f5f0; --ink-soft: #b8b8b3; --ink-mute: #6e6e6a;
+  --line: rgba(255,255,255,0.08); --line-strong: rgba(255,255,255,0.14);
+  --accent: #21d97a; --accent-soft: rgba(33,217,122,0.12); --accent-deep: #1ab867;
+  --warm: #f4a261; --warm-soft: rgba(244,162,97,0.12);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+}
+:root[data-theme="light"] {
+  --bg: #faf8f3; --bg-soft: #f3f0e8; --bg-card: #ffffff; --bg-elevated: #ffffff;
+  --ink: #1a1a1a; --ink-soft: #4a4a4a; --ink-mute: #8a8a85;
+  --line: rgba(26,26,26,0.08); --line-strong: rgba(26,26,26,0.14);
+  --accent: #15a85c; --accent-soft: rgba(21,168,92,0.10); --accent-deep: #0e8a4a;
+  --warm: #e08540; --warm-soft: rgba(224,133,64,0.12);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04);
+}
+:root { --radius-md: 20px; --serif: 'Fraunces','Times New Roman',serif; --sans: 'Inter Tight',-apple-system,BlinkMacSystemFont,sans-serif; --ease: cubic-bezier(0.16,1,0.3,1); }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
+body { font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; transition:background-color 0.4s var(--ease),color 0.4s var(--ease); }
+body::before { content:''; position:fixed; inset:0; pointer-events:none; opacity:0.4; z-index:1; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"); }
+a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+
+nav { position:fixed; top:16px; left:50%; transform:translateX(-50%); z-index:100; background:color-mix(in srgb,var(--bg) 72%,transparent); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border:1px solid var(--line); border-radius:100px; padding:8px 8px 8px 18px; display:flex; align-items:center; gap:16px; box-shadow:var(--shadow-sm); transition:background-color 0.4s var(--ease),border-color 0.4s var(--ease); }
+.logo { display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:600; font-size:18px; letter-spacing:-0.02em; color:var(--ink); text-decoration:none; }
+.logo:hover { text-decoration:none; }
+.logo-mark { width:32px; height:32px; border-radius:8px; overflow:hidden; }
+.logo-mark img { width:100%; height:100%; object-fit:cover; }
+.logo-dot { color:var(--accent); }
+.nav-actions { display:flex; align-items:center; gap:8px; }
+.theme-toggle { width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--ink); cursor:pointer; display:grid; place-items:center; transition:all 0.25s var(--ease); }
+.theme-toggle:hover { background:var(--bg-soft); }
+[data-theme="dark"] .icon-sun { display:block; } [data-theme="dark"] .icon-moon { display:none; }
+[data-theme="light"] .icon-sun { display:none; } [data-theme="light"] .icon-moon { display:block; }
+.btn-back { display:inline-flex; align-items:center; gap:6px; background:var(--accent); color:#fff; padding:10px 18px; border-radius:100px; font-size:14px; font-weight:600; text-decoration:none; transition:all 0.25s var(--ease); }
+.btn-back:hover { background:var(--accent-deep); text-decoration:none; transform:translateY(-1px); }
+
+.page { max-width:800px; margin:0 auto; padding:140px 32px 100px; position:relative; z-index:2; }
+.page-header { margin-bottom:48px; }
+.page-header h1 { font-family:var(--serif); font-size:clamp(36px,5vw,56px); line-height:1; letter-spacing:-0.03em; font-weight:400; margin-bottom:12px; }
+.page-header h1 em { font-style:italic; font-weight:300; color:var(--accent); }
+.page-header p { color:var(--ink-soft); font-size:17px; }
+
+.lang-toggle-wrap { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; }
+.lang-toggle-label { font-size:13px; color:var(--ink-mute); font-weight:500; }
+.lang-toggle { display:flex; background:var(--bg-soft); border:1px solid var(--line); border-radius:100px; padding:3px; gap:2px; }
+.lang-btn { padding:8px 20px; border-radius:100px; font-size:14px; font-weight:600; border:none; background:transparent; color:var(--ink-mute); cursor:pointer; transition:all 0.25s var(--ease); font-family:inherit; }
+.lang-btn.active { background:var(--accent); color:white; box-shadow:0 2px 8px var(--accent-soft); }
+.lang-btn:not(.active):hover { color:var(--ink); background:var(--bg-card); }
+
+.policy-section { display:none; } .policy-section.active { display:block; }
+.policy-block { background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius-md); padding:40px; margin-bottom:24px; transition:border-color 0.3s; }
+.policy-block:hover { border-color:var(--line-strong); }
+.policy-block h2 { font-family:var(--serif); font-size:28px; font-weight:500; letter-spacing:-0.02em; margin-bottom:16px; line-height:1.15; }
+.policy-block h3 { font-family:var(--serif); font-size:20px; font-weight:500; letter-spacing:-0.01em; margin:24px 0 10px; color:var(--ink); }
+.policy-block p { color:var(--ink-soft); font-size:15px; line-height:1.7; margin-bottom:12px; }
+.policy-block p:last-child { margin-bottom:0; }
+.policy-block strong { color:var(--ink); font-weight:600; }
+.policy-block ul { color:var(--ink-soft); font-size:15px; line-height:1.7; margin:8px 0 12px 20px; }
+.policy-block li { margin-bottom:6px; }
+.policy-block a { color:var(--accent); text-decoration:none; } .policy-block a:hover { text-decoration:underline; }
+
+.notice-box { background:var(--warm-soft); border:1px solid color-mix(in srgb,var(--warm) 30%,var(--line)); border-radius:12px; padding:16px 20px; margin:16px 0; font-size:14px; color:var(--ink-soft); line-height:1.6; }
+
+footer { border-top:1px solid var(--line); padding:32px; font-size:13px; color:var(--ink-mute); text-align:center; position:relative; z-index:2; }
+footer a { color:var(--ink-mute); } footer a:hover { color:var(--ink); }
+
+@media (max-width:600px) {
+  .page { padding:120px 20px 60px; }
+  nav { padding:6px 6px 6px 14px; gap:10px; width:calc(100% - 32px); max-width:400px; }
+  .policy-block { padding:24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">
+    <span class="logo-mark"><img src="assets/logo.png" alt=""></span>
+    LamaFeed<span class="logo-dot">.</span>
+  </a>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <a href="/" class="btn-back">← Back to home</a>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="page">
+
+  <div class="page-header">
+    <h1>Legal <em>Notice</em></h1>
+    <p>Impressum gemäß § 5 TMG</p>
+  </div>
+
+  <!-- Language toggle -->
+  <div class="lang-toggle-wrap">
+    <span class="lang-toggle-label">Language:</span>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch</button>
+      <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+    </div>
+  </div>
+
+  <!-- ============ GERMAN ============ -->
+  <div class="policy-section active" id="policy-de">
+
+    <div class="policy-block">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        <strong>Emunator / Emanuel Schörnig</strong><br>
+        c/o IP-Management #3950<br>
+        Ludwig-Erhard-Str. 18<br>
+        20459 Hamburg<br>
+        Deutschland
+      </p>
+      <div class="notice-box">
+        Die angegebene Adresse dient ausschließlich der gesetzlich vorgeschriebenen Angabe im Impressum. Es werden keine Pakete oder sonstige Warensendungen entgegengenommen.
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <h2>Kontakt</h2>
+      <p>
+        <strong>Telefon:</strong> <a href="tel:+4915159007686">+49 151 59007686</a><br>
+        <strong>E-Mail:</strong> <a href="mailto:lamafeed@emunator.com">lamafeed@emunator.com</a><br>
+        <strong>Website:</strong> <a href="https://lamafeed.emunator.com">lamafeed.emunator.com</a>
+      </p>
+      <p style="font-size:14px; color:var(--ink-mute); font-style:italic; margin-top:12px;">
+        Telefon und E-Mail dienen ausschließlich der Kontaktaufnahme in Angelegenheiten, die diese Website und die LamaFeed-App betreffen. Anfragen anderer Art — insbesondere Werbung, Spam oder kommerzielle Angebote — werden nicht bearbeitet.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Hinweis zur Website</h2>
+      <p>
+        Diese Website ist ein privates Projekt zur Vorstellung der LamaFeed-App. Es findet kein Verkauf von Waren oder Dienstleistungen statt. Die App selbst ist kostenlos und werbefrei erhältlich.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Hosting</h2>
+      <p>
+        Diese Website wird über <strong>GitHub Pages</strong> gehostet (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Die Domain <strong>emunator.com</strong> wird über <strong>Strato AG</strong> (Otto-Ostrowski-Straße 7, 10249 Berlin) registriert.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+      </p>
+      <p>
+        Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Haftung für Links</h2>
+      <p>
+        Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Urheberrecht</h2>
+      <p>
+        Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Datenschutz</h2>
+      <p>
+        Informationen zum Umgang mit personenbezogenen Daten finden Sie in unserer <a href="privacy">Datenschutzerklärung</a>.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div class="policy-section" id="policy-en">
+
+    <div class="policy-block">
+      <h2>Information pursuant to § 5 TMG (German Telemedia Act)</h2>
+      <p>
+        <strong>Emunator / Emanuel Schörnig</strong><br>
+        c/o IP-Management #3950<br>
+        Ludwig-Erhard-Str. 18<br>
+        20459 Hamburg<br>
+        Germany
+      </p>
+      <div class="notice-box">
+        The address above is provided solely to fulfil the legal requirement for a German imprint (Impressum). No parcels or shipments are accepted at this address.
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <h2>Contact</h2>
+      <p>
+        <strong>Phone:</strong> <a href="tel:+4915159007686">+49 151 59007686</a><br>
+        <strong>Email:</strong> <a href="mailto:lamafeed@emunator.com">lamafeed@emunator.com</a><br>
+        <strong>Website:</strong> <a href="https://lamafeed.emunator.com">lamafeed.emunator.com</a>
+      </p>
+      <p style="font-size:14px; color:var(--ink-mute); font-style:italic; margin-top:12px;">
+        Phone and email are for inquiries related to this website and the LamaFeed app only. Unsolicited commercial messages, spam, or advertising will not be processed.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>About this website</h2>
+      <p>
+        This website is a private project to present the LamaFeed app. No goods or services are sold. The app itself is available free of charge and without advertising.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Hosting</h2>
+      <p>
+        This website is hosted via <strong>GitHub Pages</strong> (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). The domain <strong>emunator.com</strong> is registered through <strong>Strato AG</strong> (Otto-Ostrowski-Straße 7, 10249 Berlin, Germany).
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Liability for content</h2>
+      <p>
+        As a service provider, we are responsible for our own content on these pages in accordance with § 7(1) TMG. However, according to §§ 8–10 TMG, we are not obligated to monitor transmitted or stored third-party information.
+      </p>
+      <p>
+        Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the time of knowledge of a specific infringement. Upon becoming aware of such violations, we will remove the content immediately.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Liability for links</h2>
+      <p>
+        This website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot assume any liability for this external content. The respective provider or operator is always responsible for the content of linked pages.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Copyright</h2>
+      <p>
+        The content and works created by the site operator on these pages are subject to German copyright law. Reproduction, editing, distribution, and any kind of exploitation outside the limits of copyright require written consent of the respective author or creator.
+      </p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Privacy</h2>
+      <p>
+        For information about how we handle personal data, please see our <a href="privacy">Privacy Policy</a>.
+      </p>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <a href="/">LamaFeed</a> · © 2026 · <a href="privacy">Privacy</a> · <a href="mailto:lamafeed@emunator.com">Contact</a> · <a href="https://emunator.com">emunator.com</a>
+</footer>
+
+<script>
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const savedTheme = localStorage.getItem('lamafeed-theme') || 'dark';
+root.setAttribute('data-theme', savedTheme);
+themeToggle.addEventListener('click', () => {
+  const current = root.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('lamafeed-theme', next); } catch(e) {}
+});
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const lang = btn.getAttribute('data-lang');
+    document.querySelectorAll('.policy-section').forEach(s => s.classList.remove('active'));
+    document.getElementById('policy-' + lang).classList.add('active');
+    document.documentElement.lang = lang;
+  });
+});
+</script>
+</body>
+</html>
