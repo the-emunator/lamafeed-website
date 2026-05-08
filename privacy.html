@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — LamaFeed</title>
+<meta name="description" content="Privacy Policy / Datenschutzerklärung for LamaFeed App and Website.">
+
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   THEME TOKENS (same as main site)
+============================================ */
+:root[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --bg-soft: #131313;
+  --bg-card: #1a1a1a;
+  --bg-elevated: #1f1f1f;
+  --ink: #f5f5f0;
+  --ink-soft: #b8b8b3;
+  --ink-mute: #6e6e6a;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.14);
+  --accent: #21d97a;
+  --accent-soft: rgba(33, 217, 122, 0.12);
+  --accent-deep: #1ab867;
+  --warm: #f4a261;
+  --warm-soft: rgba(244, 162, 97, 0.12);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+}
+
+:root[data-theme="light"] {
+  --bg: #faf8f3;
+  --bg-soft: #f3f0e8;
+  --bg-card: #ffffff;
+  --bg-elevated: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-mute: #8a8a85;
+  --line: rgba(26, 26, 26, 0.08);
+  --line-strong: rgba(26, 26, 26, 0.14);
+  --accent: #15a85c;
+  --accent-soft: rgba(21, 168, 92, 0.10);
+  --accent-deep: #0e8a4a;
+  --warm: #e08540;
+  --warm-soft: rgba(224, 133, 64, 0.12);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04);
+}
+
+:root {
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --serif: 'Fraunces', 'Times New Roman', serif;
+  --sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+  transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+/* Grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ============================================
+   NAV (simplified)
+============================================ */
+nav {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 8px 8px 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.logo:hover { text-decoration: none; }
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-dot { color: var(--accent); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.25s var(--ease);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-soft);
+}
+
+[data-theme="dark"] .icon-sun { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+}
+
+.btn-back:hover {
+  background: var(--accent-deep);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   PAGE CONTENT
+============================================ */
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 140px 32px 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header {
+  margin-bottom: 48px;
+}
+
+.page-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.page-header h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+}
+
+.page-header p {
+  color: var(--ink-soft);
+  font-size: 17px;
+}
+
+/* ============================================
+   LANGUAGE TOGGLE
+============================================ */
+.lang-toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.lang-toggle-label {
+  font-size: 13px;
+  color: var(--ink-mute);
+  font-weight: 500;
+}
+
+.lang-toggle {
+  display: flex;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.lang-btn {
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--ink-mute);
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  font-family: inherit;
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 2px 8px var(--accent-soft);
+}
+
+.lang-btn:not(.active):hover {
+  color: var(--ink);
+  background: var(--bg-card);
+}
+
+/* ============================================
+   POLICY SECTIONS
+============================================ */
+.policy-section {
+  display: none;
+}
+
+.policy-section.active {
+  display: block;
+}
+
+/* Shared styling for content blocks */
+.policy-block {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 40px;
+  margin-bottom: 24px;
+  transition: border-color 0.3s;
+}
+
+.policy-block:hover {
+  border-color: var(--line-strong);
+}
+
+.policy-block-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 20px;
+  padding: 4px 10px;
+  background: var(--accent-soft);
+  border-radius: 100px;
+}
+
+.policy-block-label.warm {
+  color: var(--warm);
+  background: var(--warm-soft);
+}
+
+.policy-block h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.policy-block h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 24px 0 10px;
+  color: var(--ink);
+}
+
+.policy-block p {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.policy-block p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-block strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.policy-block ul, .policy-block ol {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 8px 0 12px 20px;
+}
+
+.policy-block li {
+  margin-bottom: 6px;
+}
+
+.policy-block code {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 13px;
+  background: var(--bg-soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--warm);
+  word-break: break-all;
+}
+
+/* Table styling */
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.policy-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.policy-table td {
+  padding: 10px 12px;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.policy-table tr:last-child td {
+  border-bottom: none;
+}
+
+.check-list {
+  list-style: none;
+  margin-left: 0 !important;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.check-list li::before {
+  content: '✅';
+  flex-shrink: 0;
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: var(--line);
+  margin: 48px 0;
+  border: none;
+}
+
+.divider-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 56px 0 32px;
+  color: var(--ink-mute);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.divider-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* Contact box */
+.contact-box {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-box p {
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.contact-box a {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 32px;
+  font-size: 13px;
+  color: var(--ink-mute);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+footer a {
+  color: var(--ink-mute);
+}
+
+footer a:hover {
+  color: var(--ink);
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 600px) {
+  .page { padding: 120px 20px 60px; }
+  
+  nav {
+    padding: 6px 6px 6px 14px;
+    gap: 10px;
+    width: calc(100% - 32px);
+    max-width: 400px;
+  }
+  
+  .policy-block { padding: 24px; }
+  
+  .policy-table { font-size: 13px; }
+  .policy-table th, .policy-table td { padding: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">
+    <span class="logo-mark"><img src="assets/logo.png" alt=""></span>
+    LamaFeed<span class="logo-dot">.</span>
+  </a>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+      </svg>
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+    <a href="/" class="btn-back">← Back to home</a>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="page">
+  
+  <div class="page-header">
+    <h1>Privacy <em>Policy</em></h1>
+    <p>Last updated: May 2026 · App version 0.5.0</p>
+  </div>
+  
+  <!-- Language toggle -->
+  <div class="lang-toggle-wrap">
+    <span class="lang-toggle-label">Language:</span>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch</button>
+      <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+    </div>
+  </div>
+  
+  <!-- ============================================================
+       GERMAN VERSION
+  ============================================================ -->
+  <div class="policy-section active" id="policy-de">
+    
+    <!-- Website Privacy (short) -->
+    <div class="divider-label">Webseite</div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label">Webseite</span>
+      <h2>Datenschutz — lamafeed.emunator.com</h2>
+      <p>Diese Webseite wird über <strong>GitHub Pages</strong> gehostet (Anbieter: GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Beim Aufruf der Seite können durch GitHub automatisch technische Daten wie Ihre IP-Adresse und Browserinformationen in Server-Logs erfasst werden. Details hierzu finden Sie in der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+      <p>Diese Webseite verwendet <strong>keine Cookies</strong>, <strong>keine Analyse-Tools</strong>, <strong>keine Tracker</strong> und <strong>kein Kontaktformular</strong>. Es werden durch den Betreiber keine personenbezogenen Daten erhoben oder verarbeitet.</p>
+      <p>Für die Darstellung der Schriftarten werden <strong>Google Fonts</strong> eingebunden (Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim Laden der Schriftarten wird eine Verbindung zu Googles Servern hergestellt, wobei Ihre IP-Adresse an Google übermittelt wird. Es gilt die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+      <p>Der einzige lokal gespeicherte Wert ist Ihre <strong>Theme-Präferenz</strong> (Dark/Light Mode) im localStorage Ihres Browsers. Dieser Wert enthält keine personenbezogenen Daten und kann jederzeit über die Browser-Einstellungen gelöscht werden.</p>
+    </div>
+    
+    <!-- App Privacy -->
+    <div class="divider-label">LamaFeed App</div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>1. Verantwortlicher</h2>
+      <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+      <p><strong>Emunator</strong><br>
+      E-Mail: <a href="mailto:lamafeed@emunator.com">lamafeed@emunator.com</a><br>
+      Website: <a href="https://lamafeed.emunator.com">https://lamafeed.emunator.com</a></p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>2. Grundsatz: Lokale Datenspeicherung</h2>
+      <p>LamaFeed ist eine RSS-Reader-App, die <strong>ohne Nutzerkonto</strong> auskommt. Es werden <strong>keine personenbezogenen Daten auf eigenen Servern gespeichert, verarbeitet oder weitergegeben</strong>. Alle Daten, die du in der App eingibst oder die durch die Nutzung entstehen, verbleiben ausschließlich auf deinem Gerät.</p>
+      <p>Es gibt keine Nutzerkonten, keine Registrierung, kein Login und keine Cloud-Synchronisation.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>3. Welche Daten werden gespeichert und wozu?</h2>
+      
+      <h3>3.1 Lokal auf deinem Gerät</h3>
+      <p>LamaFeed speichert folgende Daten ausschließlich lokal auf deinem Gerät:</p>
+      
+      <table class="policy-table">
+        <thead>
+          <tr><th>Datenkategorie</th><th>Beispiele</th><th>Zweck</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Feed-Daten</strong></td><td>URL, Titel, Beschreibung, Kategorie</td><td>Anzeige und Aktualisierung deiner RSS-Feeds</td></tr>
+          <tr><td><strong>Artikel</strong></td><td>Titel, Link, Inhalt, Bild-URL, Erscheinungsdatum</td><td>Anzeige der Feed-Inhalte</td></tr>
+          <tr><td><strong>Gelesen/Gespeichert</strong></td><td>Gelesen-Status, gespeicherte Artikel</td><td>Personalisierung des Feed-Erlebnisses</td></tr>
+          <tr><td><strong>Kategorien</strong></td><td>Name, Farbe</td><td>Organisation deiner Feeds</td></tr>
+          <tr><td><strong>Einstellungen</strong></td><td>Theme, Schriftgröße, Sprache, Benachrichtigungen, Icon-Farbe, Auto-Refresh-Intervall</td><td>Personalisierung der App</td></tr>
+          <tr><td><strong>Optionaler Anzeigename</strong></td><td>Von dir frei wählbar (z.&nbsp;B. „Alex")</td><td>Anzeige in der Begrüßung – nur lokal</td></tr>
+        </tbody>
+      </table>
+      
+      <p>Diese Daten werden im internen Gerätespeicher abgelegt und verlassen dein Gerät nicht, es sei denn, du exportierst sie aktiv (siehe Abschnitt 6).</p>
+      
+      <h3>3.2 Hintergrunddienst (WorkManager / SharedPreferences)</h3>
+      <p>Wenn du den automatischen Hintergrund-Refresh aktivierst, speichert die App folgende Daten in Android SharedPreferences – ebenfalls <strong>ausschließlich lokal</strong>:</p>
+      <ul>
+        <li>Konfiguration deiner Feeds (URL, Name, Benachrichtigungseinstellungen)</li>
+        <li>GUIDs bereits gesehener Artikel (zum Erkennen neuer Beiträge)</li>
+        <li>Ergebnisse des letzten Hintergrund-Refreshs (neue Artikel)</li>
+      </ul>
+      <p>Diese Daten dienen ausschließlich der Funktion des Hintergrund-Dienstes und werden nach Abruf durch die App gelöscht.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>4. Netzwerkzugriffe und externe Dienste</h2>
+      <p>Für bestimmte Funktionen kommuniziert die App mit externen Diensten. Es werden dabei <strong>keine personenbezogenen Daten</strong> übermittelt.</p>
+      
+      <h3>4.1 RSS-Feeds abrufen</h3>
+      <p>Um die von dir hinzugefügten RSS-Feeds zu laden, werden HTTP-Anfragen an die jeweiligen Feed-URLs gestellt. Diese Anfragen enthalten lediglich die Feed-URL und technisch notwendige HTTP-Header (User-Agent, Accept). Es werden keine persönlichen Daten übermittelt.</p>
+      <p>Da WebViews keine direkten Cross-Origin-Anfragen erlauben, werden beim Abruf über die WebView-Komponente folgende CORS-Proxy-Dienste als Zwischenstufe genutzt:</p>
+      <ul>
+        <li><strong>corsproxy.io</strong> (<a href="https://corsproxy.io" target="_blank" rel="noopener">https://corsproxy.io</a>)</li>
+        <li><strong>AllOrigins</strong> (<a href="https://api.allorigins.win" target="_blank" rel="noopener">https://api.allorigins.win</a>)</li>
+        <li><strong>CodeTabs</strong> (<a href="https://api.codetabs.com" target="_blank" rel="noopener">https://api.codetabs.com</a>)</li>
+      </ul>
+      <p>An diese Dienste wird ausschließlich die <strong>URL des jeweiligen RSS-Feeds</strong> übermittelt. Für den Hintergrund-Refresh (WorkManager) werden RSS-Feeds <strong>direkt</strong> abgerufen, ohne CORS-Proxy.</p>
+      
+      <h3>4.2 Feed-Icons (Favicons)</h3>
+      <p>Für die Anzeige von Feed-Icons nutzt die App den <strong>Google Favicon Service</strong>:</p>
+      <p><code>https://www.google.com/s2/favicons?domain={domain}&amp;sz=64</code></p>
+      <p>Dabei wird die Domain des jeweiligen Feeds an Google übermittelt. Es gilt die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+      
+      <h3>4.3 Benachrichtigungen</h3>
+      <p>Benachrichtigungen werden ausschließlich als <strong>lokale Benachrichtigungen</strong> auf deinem Gerät erzeugt. Es werden keine Push-Notification-Dienste (wie Firebase Cloud Messaging) verwendet.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>5. Berechtigungen der App</h2>
+      <table class="policy-table">
+        <thead>
+          <tr><th>Berechtigung</th><th>Zweck</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>INTERNET</strong></td><td>Abrufen von RSS-Feeds und Feed-Icons</td></tr>
+          <tr><td><strong>POST_NOTIFICATIONS</strong></td><td>Anzeige lokaler Benachrichtigungen bei neuen Artikeln (Android 13+)</td></tr>
+          <tr><td><strong>RECEIVE_BOOT_COMPLETED</strong></td><td>Wiederherstellung des Hintergrund-Refresh nach Neustart des Geräts</td></tr>
+          <tr><td><strong>VIBRATE</strong></td><td>Vibration bei Benachrichtigungen</td></tr>
+          <tr><td><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong></td><td>Optionale Anfrage zur Deaktivierung der Akku-Optimierung für zuverlässigere Hintergrundaktualisierungen</td></tr>
+        </tbody>
+      </table>
+      <p>Die Berechtigung <code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code> wird nur auf ausdrücklichen Wunsch des Nutzers über die entsprechende Einstellung aktiviert.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>6. Export und Import von Daten</h2>
+      <p>LamaFeed bietet eine <strong>Backup-Funktion</strong>, mit der du deine Daten exportieren und importieren kannst.</p>
+      <p><strong>Exportierte Daten umfassen:</strong></p>
+      <ul>
+        <li>Deine Feed-Liste (URLs, Titel, Kategorien)</li>
+        <li>Deine Kategorien</li>
+        <li>Deine gespeicherten Artikel</li>
+      </ul>
+      <p>Exportierte Daten werden als JSON-Datei auf deinem Gerät gespeichert oder über die Android-Teilen-Funktion weitergegeben. Die Weitergabe liegt dabei vollständig in deiner Kontrolle. Der Entwickler erhält keine Kopie dieser Daten.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>7. Hintergrund-Refresh und Benachrichtigungen</h2>
+      <p>Wenn du den automatischen Refresh aktivierst, läuft im Hintergrund ein Dienst (Android WorkManager), der in regelmäßigen Abständen deine RSS-Feeds auf neue Inhalte prüft:</p>
+      <ul>
+        <li>Der Dienst wird nur ausgeführt, wenn eine Netzwerkverbindung besteht.</li>
+        <li>Das kürzeste Aktualisierungsintervall beträgt 15 Minuten (Android-seitige Mindestanforderung).</li>
+        <li>Der Dienst speichert seine Ergebnisse ausschließlich lokal in Android SharedPreferences.</li>
+        <li>Du kannst den Hintergrund-Refresh jederzeit in den Einstellungen deaktivieren.</li>
+      </ul>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>8. Gerätespeicher und Datenlöschung</h2>
+      <p>Alle lokal gespeicherten Daten können jederzeit durch folgende Aktionen gelöscht werden:</p>
+      <ul>
+        <li><strong>In der App:</strong> Einstellungen → Daten → „Alle Daten löschen"</li>
+        <li><strong>Systemseitig:</strong> Deinstallation der App löscht alle lokal gespeicherten App-Daten automatisch</li>
+      </ul>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>9. Kinder</h2>
+      <p>LamaFeed richtet sich nicht gezielt an Kinder unter 13 Jahren. Die App sammelt weder von Kindern noch von Erwachsenen personenbezogene Daten auf eigenen Servern.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>10. Analyse, Tracking und Werbung</h2>
+      <p>LamaFeed enthält:</p>
+      <ul class="check-list">
+        <li><strong>Keine</strong> Analyse-Tools (kein Google Analytics, kein Firebase Analytics, kein Crashlytics o.&nbsp;ä.)</li>
+        <li><strong>Keine</strong> Werbung</li>
+        <li><strong>Kein</strong> Tracking oder Profiling</li>
+        <li><strong>Keine</strong> In-App-Käufe</li>
+        <li><strong>Kein</strong> Nutzerkonto erforderlich</li>
+      </ul>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>11. Deine Rechte nach DSGVO</h2>
+      <p>Da der Entwickler keine personenbezogenen Daten auf eigenen Servern speichert, liegen alle gespeicherten Daten ausschließlich auf deinem eigenen Gerät und damit in deiner vollständigen Kontrolle:</p>
+      <ul>
+        <li><strong>Auskunft:</strong> Alle gespeicherten Daten sind über die App einsehbar.</li>
+        <li><strong>Berichtigung:</strong> Daten können direkt in der App bearbeitet werden.</li>
+        <li><strong>Löschung:</strong> Alle Daten können in der App oder durch Deinstallation gelöscht werden.</li>
+        <li><strong>Datenportabilität:</strong> Export als JSON-Datei jederzeit möglich.</li>
+        <li><strong>Widerspruch:</strong> Hintergrund-Refresh und Benachrichtigungen können jederzeit deaktiviert werden.</li>
+      </ul>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>12. Drittanbieter-Links</h2>
+      <p>Die App enthält Links zu externen Websites (z.&nbsp;B. FAQ, Impressum, Ko-fi). Diese Seiten unterliegen den jeweiligen eigenen Datenschutzbestimmungen. Durch das Aufrufen externer Links verlässt du den Verantwortungsbereich von LamaFeed.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>13. Änderungen dieser Datenschutzerklärung</h2>
+      <p>Diese Datenschutzerklärung kann bei Änderungen der App oder der Rechtslage aktualisiert werden. Die jeweils aktuelle Version ist unter <a href="https://lamafeed.emunator.com/privacy">https://lamafeed.emunator.com/privacy</a> abrufbar. Das Datum der letzten Aktualisierung ist am Anfang dieses Dokuments angegeben.</p>
+    </div>
+    
+    <div class="contact-box">
+      <p>Fragen zum Datenschutz?</p>
+      <a href="mailto:lamafeed@emunator.com">lamafeed@emunator.com</a>
+    </div>
+    
+  </div>
+  
+  <!-- ============================================================
+       ENGLISH VERSION
+  ============================================================ -->
+  <div class="policy-section" id="policy-en">
+    
+    <!-- Website Privacy (short) -->
+    <div class="divider-label">Website</div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label">Website</span>
+      <h2>Privacy — lamafeed.emunator.com</h2>
+      <p>This website is hosted via <strong>GitHub Pages</strong> (provider: GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). When you visit this site, GitHub may automatically collect technical data such as your IP address and browser information in server logs. For details, see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+      <p>This website uses <strong>no cookies</strong>, <strong>no analytics tools</strong>, <strong>no trackers</strong>, and <strong>no contact forms</strong>. No personal data is collected or processed by the site operator.</p>
+      <p><strong>Google Fonts</strong> are used for typography (provider: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland). Loading fonts establishes a connection to Google's servers, transmitting your IP address. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> applies.</p>
+      <p>The only locally stored value is your <strong>theme preference</strong> (Dark/Light mode) in your browser's localStorage. This contains no personal data and can be cleared via your browser settings at any time.</p>
+    </div>
+    
+    <!-- App Privacy -->
+    <div class="divider-label">LamaFeed App</div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>1. Controller</h2>
+      <p>The controller within the meaning of the General Data Protection Regulation (GDPR) is:</p>
+      <p><strong>Emunator</strong><br>
+      Email: <a href="mailto:lamafeed@emunator.com">lamafeed@emunator.com</a><br>
+      Website: <a href="https://lamafeed.emunator.com">https://lamafeed.emunator.com</a></p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>2. Core principle: local data storage</h2>
+      <p>LamaFeed is an RSS reader app that works <strong>without a user account</strong>. <strong>No personal data is stored, processed, or shared on any server.</strong> All data you enter or that is generated through use of the app remains exclusively on your device.</p>
+      <p>There are no user accounts, no registration, no login, and no cloud synchronisation.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>3. What data is stored and why?</h2>
+      
+      <h3>3.1 Locally on your device</h3>
+      <p>LamaFeed stores the following data exclusively on your device:</p>
+      
+      <table class="policy-table">
+        <thead>
+          <tr><th>Category</th><th>Examples</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Feed data</strong></td><td>URL, title, description, category</td><td>Display and refresh your RSS feeds</td></tr>
+          <tr><td><strong>Articles</strong></td><td>Title, link, content, image URL, publish date</td><td>Display feed content</td></tr>
+          <tr><td><strong>Read/saved state</strong></td><td>Read status, saved articles</td><td>Personalise your feed experience</td></tr>
+          <tr><td><strong>Categories</strong></td><td>Name, colour</td><td>Organise your feeds</td></tr>
+          <tr><td><strong>Settings</strong></td><td>Theme, font size, language, notification settings, icon colour, auto-refresh interval</td><td>App personalisation</td></tr>
+          <tr><td><strong>Optional display name</strong></td><td>Freely chosen by you (e.g. "Alex")</td><td>Shown in the greeting – stored locally only</td></tr>
+        </tbody>
+      </table>
+      
+      <p>This data is stored in the device's internal storage and does not leave your device unless you actively export it (see section 6).</p>
+      
+      <h3>3.2 Background service (WorkManager / SharedPreferences)</h3>
+      <p>If you enable automatic background refresh, the app stores the following data in Android SharedPreferences – also <strong>exclusively locally</strong>:</p>
+      <ul>
+        <li>Your feed configuration (URL, name, notification settings)</li>
+        <li>GUIDs of already-seen articles (to detect new content)</li>
+        <li>Results of the last background refresh (new articles)</li>
+      </ul>
+      <p>This data is used solely for the background service and is deleted after being retrieved by the app.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>4. Network access and external services</h2>
+      <p>For certain features, the app communicates with external services. <strong>No personal data is transmitted</strong> in these requests.</p>
+      
+      <h3>4.1 Fetching RSS feeds</h3>
+      <p>To load the RSS feeds you have added, the app makes HTTP requests to the respective feed URLs. These requests contain only the feed URL and technically necessary HTTP headers (User-Agent, Accept). No personal data is transmitted.</p>
+      <p>Because WebViews cannot make direct cross-origin requests, the following CORS proxy services are used as intermediaries:</p>
+      <ul>
+        <li><strong>corsproxy.io</strong> (<a href="https://corsproxy.io" target="_blank" rel="noopener">https://corsproxy.io</a>)</li>
+        <li><strong>AllOrigins</strong> (<a href="https://api.allorigins.win" target="_blank" rel="noopener">https://api.allorigins.win</a>)</li>
+        <li><strong>CodeTabs</strong> (<a href="https://api.codetabs.com" target="_blank" rel="noopener">https://api.codetabs.com</a>)</li>
+      </ul>
+      <p>Only the <strong>URL of the respective RSS feed</strong> is transmitted. For background refresh (WorkManager), RSS feeds are fetched <strong>directly</strong> without a CORS proxy.</p>
+      
+      <h3>4.2 Feed icons (favicons)</h3>
+      <p>To display feed icons, the app uses the <strong>Google Favicon Service</strong>:</p>
+      <p><code>https://www.google.com/s2/favicons?domain={domain}&amp;sz=64</code></p>
+      <p>The domain of the respective feed is transmitted to Google. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> applies.</p>
+      
+      <h3>4.3 Notifications</h3>
+      <p>Notifications are generated exclusively as <strong>local notifications</strong> on your device. No push notification services (such as Firebase Cloud Messaging) are used.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>5. App permissions</h2>
+      <table class="policy-table">
+        <thead>
+          <tr><th>Permission</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>INTERNET</strong></td><td>Fetching RSS feeds and feed icons</td></tr>
+          <tr><td><strong>POST_NOTIFICATIONS</strong></td><td>Displaying local notifications for new articles (Android 13+)</td></tr>
+          <tr><td><strong>RECEIVE_BOOT_COMPLETED</strong></td><td>Restoring background refresh after device reboot</td></tr>
+          <tr><td><strong>VIBRATE</strong></td><td>Vibration for notifications</td></tr>
+          <tr><td><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong></td><td>Optional request to disable battery optimisation for more reliable background updates</td></tr>
+        </tbody>
+      </table>
+      <p>The <code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code> permission is only activated at the explicit request of the user through the corresponding setting.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>6. Data export and import</h2>
+      <p>LamaFeed offers a <strong>backup feature</strong> that allows you to export and import your data.</p>
+      <p><strong>Exported data includes:</strong></p>
+      <ul>
+        <li>Your feed list (URLs, titles, categories)</li>
+        <li>Your categories</li>
+        <li>Your saved articles</li>
+      </ul>
+      <p>Exported data is saved as a JSON file on your device or shared via Android's share function. Sharing is entirely under your control. The developer receives no copy of this data.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>7. Background refresh and notifications</h2>
+      <p>When you enable automatic refresh, a background service (Android WorkManager) runs at regular intervals to check your RSS feeds for new content:</p>
+      <ul>
+        <li>The service only runs when a network connection is available.</li>
+        <li>The minimum refresh interval is 15 minutes (Android minimum requirement).</li>
+        <li>The service stores its results exclusively locally in Android SharedPreferences.</li>
+        <li>You can disable background refresh at any time in the settings.</li>
+      </ul>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>8. Data deletion</h2>
+      <p>All locally stored data can be deleted at any time by:</p>
+      <ul>
+        <li><strong>In the app:</strong> Settings → Data → "Delete all data"</li>
+        <li><strong>System-level:</strong> Uninstalling the app automatically deletes all locally stored app data</li>
+      </ul>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>9. Children</h2>
+      <p>LamaFeed is not specifically directed at children under the age of 13. The app does not collect personal data from children or adults on its own servers.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>10. Analytics, tracking and advertising</h2>
+      <p>LamaFeed contains:</p>
+      <ul class="check-list">
+        <li><strong>No</strong> analytics tools (no Google Analytics, no Firebase Analytics, no Crashlytics, etc.)</li>
+        <li><strong>No</strong> advertising</li>
+        <li><strong>No</strong> tracking or profiling</li>
+        <li><strong>No</strong> in-app purchases</li>
+        <li><strong>No</strong> user account required</li>
+      </ul>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>11. Your rights under GDPR</h2>
+      <p>Since the developer does not store any personal data on their own servers, all stored data is exclusively on your own device and therefore under your complete control:</p>
+      <ul>
+        <li><strong>Access:</strong> All stored data is viewable within the app.</li>
+        <li><strong>Rectification:</strong> Data can be edited directly in the app.</li>
+        <li><strong>Erasure:</strong> All data can be deleted in the app or by uninstalling it.</li>
+        <li><strong>Data portability:</strong> Export as a JSON file is available at any time.</li>
+        <li><strong>Objection:</strong> Background refresh and notifications can be disabled at any time.</li>
+      </ul>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>12. Third-party links</h2>
+      <p>The app contains links to external websites (e.g. FAQ, imprint, Ko-fi). These sites are subject to their own respective privacy policies. By following external links, you leave the responsibility of LamaFeed.</p>
+    </div>
+    
+    <div class="policy-block">
+      <span class="policy-block-label warm">App</span>
+      <h2>13. Changes to this privacy policy</h2>
+      <p>This privacy policy may be updated when the app or legal requirements change. The current version is always available at <a href="https://lamafeed.emunator.com/privacy">https://lamafeed.emunator.com/privacy</a>. The date of the last update is indicated at the top of this document.</p>
+    </div>
+    
+    <div class="contact-box">
+      <p>Questions about privacy?</p>
+      <a href="mailto:lamafeed@emunator.com">lamafeed@emunator.com</a>
+    </div>
+    
+  </div>
+  
+</main>
+
+<footer>
+  <a href="/">LamaFeed</a> · © 2026 · <a href="mailto:lamafeed@emunator.com">Contact</a> · <a href="https://emunator.com">emunator.com</a>
+</footer>
+
+<script>
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+
+const savedTheme = localStorage.getItem('lamafeed-theme') || 'dark';
+root.setAttribute('data-theme', savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const current = root.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('lamafeed-theme', next); } catch(e) {}
+});
+
+// Language toggle
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    const lang = btn.getAttribute('data-lang');
+    document.querySelectorAll('.policy-section').forEach(s => s.classList.remove('active'));
+    document.getElementById('policy-' + lang).classList.add('active');
+    
+    document.documentElement.lang = lang;
+  });
+});
+</script>
+
+</body>
+</html>
